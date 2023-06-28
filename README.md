@@ -1,4 +1,4 @@
-![Coloreflection icon](https://github.com/addefan/coloreflection/blob/main/image.png?raw=true)
+![Coloreflection icon](https://github.com/Addefan/coloreflection/blob/main/image.png?raw=true)
 
 # Coloreflection
 

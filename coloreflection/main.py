@@ -13,3 +13,22 @@ class Color:
                     "purple": 45, "cyan": 46, "lightgrey": 47, "darkgrey": 100,
                     "lightred": 101, "lightgreen": 102, "yellow": 103, "lightblue": 104,
                     "pink": 105, "lightcyan": 106, "white": 107}
+
+
+def make_color_method(code):
+    def _method(text=""):
+        return f"\033[{code}m{text}\033[0m"
+
+    return _method
+
+
+def apply_codes(obj, codes):
+    for name in codes:
+        _color_method = make_color_method(codes[name])
+        setattr(obj, name, staticmethod(_color_method))
+
+
+def coloreflection_init():
+    apply_codes(Color, Color.generic_codes)
+    apply_codes(Color.FG, Color.FG.fg_codes)
+    apply_codes(Color.BG, Color.BG.bg_codes)
